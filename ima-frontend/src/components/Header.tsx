@@ -1,7 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Calculator, FileText, BarChart3, User } from "lucide-react";
+import {useNavigate} from 'react-router-dom'
 
 export const Header = () => {
+   const navigator = useNavigate();
+
+   function loadSignUpFrm(){
+
+    navigator('/sign-up');
+
+  }
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -30,11 +39,11 @@ export const Header = () => {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm"  onClick={loadSignUpFrm}>
             <User className="h-4 w-4" />
             Login
           </Button>
-          <Button variant="hero" size="sm">
+          <Button variant="hero" size="sm" onClick={loadSignUpFrm}>
             Get Started
           </Button>
         </div>

@@ -1,8 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Users } from "lucide-react";
 import heroImage from "@/assets/hero-mortgage.jpg";
+import {useNavigate} from 'react-router-dom'
 
 export const HeroSection = () => {
+
+   const navigator = useNavigate();
+
+   function loadSignUpFrm(){
+
+    navigator('/sign-up');
+
+  }
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -27,7 +37,7 @@ export const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button variant="secondary" size="lg" className="min-w-[200px]">
+            <Button variant="secondary" size="lg" className="min-w-[200px]" onClick={loadSignUpFrm}>
               Apply Now
               <ArrowRight className="h-5 w-5" />
             </Button>

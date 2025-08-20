@@ -9,7 +9,7 @@ import { TrackingDashboard } from "@/components/TrackingDashboard";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      {/* <Header /> */}
       <main>
         <HeroSection />
         <LoanCalculator />
