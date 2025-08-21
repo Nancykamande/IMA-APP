@@ -5,9 +5,9 @@ import {useNavigate} from 'react-router-dom'
 export const Header = () => {
    const navigator = useNavigate();
 
-   function loadSignUpFrm(){
+   function loadSignInFrm(){
 
-    navigator('/sign-up');
+    navigator('/sign-in');
 
   }
 
@@ -39,11 +39,11 @@ export const Header = () => {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <Button variant="outline" size="sm"  onClick={loadSignUpFrm}>
+          <Button variant="outline" size="sm"  onClick={loadSignInFrm}>
             <User className="h-4 w-4" />
             Login
           </Button>
-          <Button variant="hero" size="sm" onClick={loadSignUpFrm}>
+          <Button variant="hero" size="sm" onClick={loadSignInFrm}>
             Get Started
           </Button>
         </div>

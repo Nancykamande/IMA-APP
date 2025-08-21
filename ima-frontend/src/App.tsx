@@ -41,7 +41,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./components/pages/NotFound";
 import Index from './components/pages/Index';
-import {SignInForm} from '@/components/authentication/SignUpForm';
+import {SignUpForm} from '@/components/authentication/SignUpForm';
+import {SignInForm} from '@/components/authentication/SignInForm';
+import UserDashboard from '@/components/loanmanagement/UserDashboard';
+import {ApplicationForm} from '@/components/ApplicationForm';
+//
+//
 import Layout from '@/components/FooterLayout';
 import HeaderLayout from '@/components/HeaderLayout';
 import {Header} from '@/components/Header';
@@ -61,7 +66,10 @@ const App = () => (
       {/* //http://localhost:5173/ */}
       <Route path='/' element={<Index/>}></Route>
       {/* /http://localhost:5173/customers */}
-      <Route path='/sign-up' element={<Layout><SignInForm /></Layout>}></Route>
+      <Route path='/sign-up' element={<Layout><SignUpForm /></Layout>}></Route>
+        <Route path='/sign-in' element={<Layout><SignInForm /></Layout>}></Route>
+            <Route path='/user-dashboard' element={<Layout><UserDashboard /></Layout>}></Route>
+            <Route path='/application-form' element={<Layout><ApplicationForm /></Layout>}></Route>
       <Route path='*' element = {<NotFound/>}></Route>
 
     </Routes>

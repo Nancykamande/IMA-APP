@@ -7,9 +7,9 @@ export const HeroSection = () => {
 
    const navigator = useNavigate();
 
-   function loadSignUpFrm(){
+   function loadSignInFrm(){
 
-    navigator('/sign-up');
+    navigator('/sign-in');
 
   }
 
@@ -37,7 +37,7 @@ export const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button variant="secondary" size="lg" className="min-w-[200px]" onClick={loadSignUpFrm}>
+            <Button variant="secondary" size="lg" className="min-w-[200px]" onClick={loadSignInFrm}>
               Apply Now
               <ArrowRight className="h-5 w-5" />
             </Button>

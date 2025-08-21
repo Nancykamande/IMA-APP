@@ -2,6 +2,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress}   from '@/components/ui/progress';
+import {useNavigate} from 'react-router-dom'
+
 import { 
   CheckCircle, 
   Clock, 
@@ -88,6 +90,14 @@ export const TrackingDashboard = () => {
     }
   };
 
+   const navigator = useNavigate();
+
+   function loadApplicationFrm(){
+
+    navigator('/application-form');
+
+   }
+
   return (
     <section id="tracking" className="py-section bg-muted/30">
       <div className="container mx-auto px-4">
@@ -99,6 +109,24 @@ export const TrackingDashboard = () => {
         </div>
 
         <div className="max-w-6xl mx-auto space-y-8">
+
+            <Card className="shadow-medium text-center py-12">
+            <CardContent>
+              <p className="text-muted-foreground mb-6">
+                Start your mortgage journey by submitting your first application.
+              </p>
+              <Button variant="hero" size="lg" onClick={loadApplicationFrm}>
+                Apply for Mortgage
+              </Button>
+              <Button variant="hero" size="lg">
+                Appeal Rejected Mortgage
+              </Button>
+                  <Button variant="hero" size="lg">
+                Withdrawal Ongoing Mortgage
+              </Button>
+            </CardContent>
+          </Card>
+
           {mockApplications.map((application) => (
             <Card key={application.id} className="shadow-medium">
               <CardHeader>
@@ -211,18 +239,7 @@ export const TrackingDashboard = () => {
           ))}
 
           {/* No Applications State */}
-          <Card className="shadow-medium text-center py-12">
-            <CardContent>
-              <FileText className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-primary mb-2">No Applications Yet</h3>
-              <p className="text-muted-foreground mb-6">
-                Start your mortgage journey by submitting your first application.
-              </p>
-              <Button variant="hero" size="lg">
-                Apply for Mortgage
-              </Button>
-            </CardContent>
-          </Card>
+        
         </div>
       </div>
     </section>
