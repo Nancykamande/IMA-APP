@@ -44,36 +44,43 @@ import Index from './components/pages/Index';
 import {SignUpForm} from '@/components/authentication/SignUpForm';
 import {SignInForm} from '@/components/authentication/SignInForm';
 import UserDashboard from '@/components/loanmanagement/UserDashboard';
-import {ApplicationForm} from '@/components/ApplicationForm';
-//
-//
+import {ApplicationForm} from '@/components/loanmanagement/ApplicationForm';
+import { useLocation } from "react-router-dom";
 import Layout from '@/components/FooterLayout';
 import HeaderLayout from '@/components/HeaderLayout';
 import {Header} from '@/components/Header';
 
 const queryClient = new QueryClient();
 
+// const location = useLocation();
+//   const hideHeaderPaths = ["/user-dashboard"];
+
+//   const shouldShowHeader = !hideHeaderPaths.includes(location.pathname);
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-       
+        {/* {shouldShowHeader &&  <HeaderLayout> </HeaderLayout>} */}
       <BrowserRouter>
-         <HeaderLayout> </HeaderLayout>
-        <Routes>
+        
     
-      {/* //http://localhost:5173/ */}
-      <Route path='/' element={<Index/>}></Route>
-      {/* /http://localhost:5173/customers */}
-      <Route path='/sign-up' element={<Layout><SignUpForm /></Layout>}></Route>
-        <Route path='/sign-in' element={<Layout><SignInForm /></Layout>}></Route>
-            <Route path='/user-dashboard' element={<Layout><UserDashboard /></Layout>}></Route>
-            <Route path='/application-form' element={<Layout><ApplicationForm /></Layout>}></Route>
-      <Route path='*' element = {<NotFound/>}></Route>
+    <Routes>
+     {/* Routes with HeaderLayout */}
+    <Route element={<HeaderLayout> </HeaderLayout>}>
+      <Route path="/" element={<Index />} />
+      <Route path="/sign-up" element={<Layout><SignUpForm /></Layout>} />
+      <Route path="/sign-in" element={<Layout><SignInForm /></Layout>} />
+      <Route path="/application-form" element={<Layout><ApplicationForm /></Layout>} />
+    </Route>
 
-    </Routes>
-   
+    {/* Route without Header */}
+    <Route path="/user-dashboard" element={<UserDashboard />} />
+
+    <Route path="*" element={<NotFound />} />
+
+   </Routes>
       </BrowserRouter>
       
     </TooltipProvider>

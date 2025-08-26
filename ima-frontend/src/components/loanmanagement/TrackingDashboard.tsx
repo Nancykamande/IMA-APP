@@ -3,6 +3,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress}   from '@/components/ui/progress';
 import {useNavigate} from 'react-router-dom'
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { MortgageSidebar } from "@/components/loanmanagement/SideBar";
+import { CustomerProfile } from "@/components/loanmanagement/CustomerProfile";
+import  { DashbaordStatis } from "@/components/loanmanagement/DashbaordStatis";
 
 import { 
   CheckCircle, 
@@ -99,7 +103,34 @@ export const TrackingDashboard = () => {
    }
 
   return (
+    
     <section id="tracking" className="py-section bg-muted/30">
+       <SidebarProvider>
+      <div className="min-h-screen flex w-full bg-background">
+        <MortgageSidebar />
+        
+        <div className="flex-1 flex flex-col">
+          {/* Header */}
+          <header className="flex items-center justify-between bg-card border-b shadow-header">
+            <div className="flex items-center gap-4 p-4">
+              <SidebarTrigger />
+              <div>
+                <h1 className="text-2xl font-bold text-foreground">Dashboard</h1>
+                <p className="text-sm text-muted-foreground">Welcome back, Customer</p>
+              </div>
+            </div>
+            <CustomerProfile />
+          </header>
+
+          {/* Main Content */}
+       
+            {/* <DashbaordStatis /> */}
+            
+            {/* Quick Actions */}
+       
+        </div>
+      </div>
+    </SidebarProvider>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary mb-4">Track Your Applications</h2>

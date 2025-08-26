@@ -3,8 +3,8 @@ import { HeroSection } from "@/components/HeroSection";
 import { LoanCalculator } from "@/components/LoanCalculator";
 import { Card } from "@/components/ui/footercard";
 import { Home, Key, Shield, CheckCircle } from "lucide-react";
-import { ApplicationForm } from "@/components/ApplicationForm";
-import { TrackingDashboard } from "@/components/TrackingDashboard";
+import { ApplicationForm } from "@/components/loanmanagement/ApplicationForm";
+import { TrackingDashboard } from "@/components/loanmanagement/TrackingDashboard";
 
 const Index = () => {
   return (
