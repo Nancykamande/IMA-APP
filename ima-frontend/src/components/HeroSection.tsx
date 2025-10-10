@@ -30,7 +30,7 @@ export const HeroSection = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Your Dream Home
-            <span className="block text-secondary-light">Awaits</span>
+            <span className="block text-secondary-light">Awaitis</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
             Simplified mortgage applications with instant pre-approval, competitive rates, and expert guidance every step of the way.

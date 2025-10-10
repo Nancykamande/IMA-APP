@@ -45,6 +45,7 @@ export function MortgageSidebar() {
 
   return (
     <Sidebar className={open ? "w-64" : "w-16"} collapsible="icon">
+ 
       <SidebarContent className="bg-card border-r">
         <div className="p-6 border-b">
           <div className="flex items-center gap-3">

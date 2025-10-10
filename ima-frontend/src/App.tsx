@@ -49,6 +49,7 @@ import { useLocation } from "react-router-dom";
 import Layout from '@/components/FooterLayout';
 import HeaderLayout from '@/components/HeaderLayout';
 import {Header} from '@/components/Header';
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const queryClient = new QueryClient();
 
@@ -64,11 +65,12 @@ const App = () => (
       <Sonner />
         {/* {shouldShowHeader &&  <HeaderLayout> </HeaderLayout>} */}
       <BrowserRouter>
+      <SidebarProvider>
         
     
     <Routes>
      {/* Routes with HeaderLayout */}
-    <Route element={<HeaderLayout> </HeaderLayout>}>
+    <Route element={<HeaderLayout />}>
       <Route path="/" element={<Index />} />
       <Route path="/sign-up" element={<Layout><SignUpForm /></Layout>} />
       <Route path="/sign-in" element={<Layout><SignInForm /></Layout>} />
@@ -81,8 +83,9 @@ const App = () => (
     <Route path="*" element={<NotFound />} />
 
    </Routes>
+    </SidebarProvider>
       </BrowserRouter>
-      
+     
     </TooltipProvider>
   </QueryClientProvider>
 );

@@ -24,11 +24,11 @@ export const Header = () => {
         </div>
 
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#calculator" className="text-muted-foreground hover:text-primary transition-colors flex items-center space-x-2">
+          {/* <a href="#calculator" className="text-muted-foreground hover:text-primary transition-colors flex items-center space-x-2">
             <Calculator className="h-4 w-4" />
             <span>Calculator</span>
           </a>
-          {/* <a href="#apply" className="text-muted-foreground hover:text-primary transition-colors flex items-center space-x-2">
+          <a href="#apply" className="text-muted-foreground hover:text-primary transition-colors flex items-center space-x-2">
             <FileText className="h-4 w-4" />
             <span>Apply</span>
           </a>
