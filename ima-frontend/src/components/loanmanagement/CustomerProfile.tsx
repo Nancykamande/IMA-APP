@@ -10,8 +10,28 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Bell, ChevronDown, LogOut, Settings, User } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { MortgageSidebar } from "./SideBar";
 
 export function CustomerProfile() {
+  const navigator = useNavigate();
+
+   function UserLogOut(){
+
+    navigator('/');
+
+   }
+   const location = useLocation();
+const hideSidebar = location.pathname === "/";
+
+{!hideSidebar && <MortgageSidebar />}
+
+
+  function loadUserProfile(){
+
+    navigator('/user-profile');
+
+   }
   return (
     <div className="flex items-center justify-end gap-4 p-4 bg-card border-b shadow-header">
       {/* Notifications */}
@@ -38,22 +58,25 @@ export function CustomerProfile() {
         <DropdownMenuContent align="end" className="w-56">
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={loadUserProfile}>
             <User className="mr-2 h-4 w-4" />
             <span>Profile</span>
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
           </DropdownMenuItem>
-          <DropdownMenuItem>
+
+          {/* <DropdownMenuItem>
             <Settings className="mr-2 h-4 w-4" />
             <span>Settings</span>
             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-          </DropdownMenuItem>
+          </DropdownMenuItem> */}
+
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="text-destructive">
+          <DropdownMenuItem  onClick={UserLogOut} className="text-destructive">
             <LogOut className="mr-2 h-4 w-4" />
             <span>Log out</span>
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
           </DropdownMenuItem>
+
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

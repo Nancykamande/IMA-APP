@@ -13,6 +13,12 @@ import { useLocation } from "react-router-dom";
 import Layout from '@/components/FooterLayout';
 import HeaderLayout from '@/components/HeaderLayout';
 import {Header} from '@/components/Header';
+import DashbaordStatis from "./components/loanmanagement/DashbaordStatis";
+import LoanCalculator from "./components/LoanCalculator";
+import { UserApplications } from "./components/loanmanagement/UserApplications";
+
+
+
 
 const queryClient = new QueryClient();
 
@@ -37,10 +43,15 @@ const App = () => (
       <Route path="/sign-up" element={<Layout><SignUpForm /></Layout>} />
       <Route path="/sign-in" element={<Layout><SignInForm /></Layout>} />
       <Route path="/application-form" element={<Layout><ApplicationForm /></Layout>} />
+      
+       
     </Route>
 
     {/* Route without Header */}
     <Route path="/user-dashboard" element={<UserDashboard />} />
+    <Route path="/user-applications" element={<UserApplications />} />
+    <Route path="/loan-calculator" element={<LoanCalculator />} />
+     <Route path="/dash-statistic" element={<DashbaordStatis />} />
 
     <Route path="*" element={<NotFound />} />
 

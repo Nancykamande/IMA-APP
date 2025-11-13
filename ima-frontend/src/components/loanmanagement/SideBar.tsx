@@ -22,12 +22,12 @@ import {
 } from "@/components/ui/sidebar";
 
 const navigationItems = [
-  { title: "Dashboard", url: "/", icon: Home },
-  { title: "Applications", url: "/applications", icon: FileText },
-  { title: "Calculator", url: "/calculator", icon: Calculator },
-  { title: "Payments", url: "/payments", icon: DollarSign },
-  { title: "Analytics", url: "/analytics", icon: BarChart3 },
-  { title: "History", url: "/history", icon: Clock },
+  { title: "Dashboard", url: "/user-dashboard", icon: Home },
+  { title: "Applications", url: "/user-applications", icon: FileText },
+  { title: "Calculator", url: "/loan-calculator", icon: Calculator },
+  { title: "Payments", url: "/dash-statistic", icon: DollarSign },
+  { title: "Analytics", url: "/dash-statistic", icon: BarChart3 },
+  { title: "History", url: "/user-applications", icon: Clock },
 ];
 
 const supportItems = [
@@ -40,7 +40,7 @@ export function MortgageSidebar() {
 
   const getNavClasses = ({ isActive }: { isActive: boolean }) =>
     isActive 
-      ? "bg-primary text-primary-foreground font-medium" 
+      ? "font-medium text-foreground" 
       : "hover:bg-muted/50 text-muted-foreground hover:text-foreground";
 
   return (
@@ -72,7 +72,8 @@ export function MortgageSidebar() {
                   <SidebarMenuButton asChild>
                     <NavLink to={item.url} end className={getNavClasses}>
                       <item.icon className="h-4 w-4" />
-                      {open && <span>{item.title}</span>}
+                      {/* {open && <span>{item.title}</span>} */}
+                       {open && <span>{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

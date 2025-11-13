@@ -9,6 +9,9 @@ import {
   Clock,
   AlertCircle
 } from "lucide-react";
+import { SidebarProvider, SidebarTrigger } from "../ui/sidebar";
+import { CustomerProfile } from "./CustomerProfile";
+import { MortgageSidebar } from "./SideBar";
 
 export function DashbaordStatis() {
   const stats = [
@@ -51,6 +54,22 @@ export function DashbaordStatis() {
   const documentsTotal = 12;
 
   return (
+    <section id="calculator" className="py-section bg-muted/30">
+       <SidebarProvider>
+             <div className="min-h-screen flex w-full bg-background">
+              <MortgageSidebar />
+              
+              <div className="flex-1 flex flex-col">
+               <header className="flex items-center justify-between bg-card border-b shadow-header">
+                  <div className="flex items-center gap-4 p-4">
+                    <SidebarTrigger />
+                    <div>
+                      <h1 className="text-2xl font-bold text-foreground">Dashboard</h1>
+                      <p className="text-sm text-muted-foreground">Welcome back, Customer</p>
+                    </div>
+                  </div>
+                  <CustomerProfile />
+                </header>
     <div className="space-y-6">
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-4">
@@ -75,6 +94,10 @@ export function DashbaordStatis() {
         ))}
       </div>
     </div>
+      </div>
+         </div>
+             </SidebarProvider>
+    </section>
   );
 }
 

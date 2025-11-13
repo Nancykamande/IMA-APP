@@ -5,8 +5,15 @@ import { Card } from "@/components/ui/footercard";
 import { Home, Key, Shield, CheckCircle } from "lucide-react";
 import { ApplicationForm } from "@/components/loanmanagement/ApplicationForm";
 import { TrackingDashboard } from "@/components/loanmanagement/TrackingDashboard";
+import { useLocation } from "react-router-dom";
+import { MortgageSidebar } from "../loanmanagement/SideBar";
 
 const Index = () => {
+    const location = useLocation();
+const hideSidebar = location.pathname === "/";
+
+{!hideSidebar && <MortgageSidebar />}
+
   return (
     <div className="min-h-screen bg-background">
       {/* <Header /> */}

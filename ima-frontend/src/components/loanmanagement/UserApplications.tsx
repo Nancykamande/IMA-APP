@@ -69,7 +69,7 @@ const mockApplications = [
   }
 ];
 
-export const TrackingDashboard = () => {
+export const UserApplications = () => {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case "Approved":
@@ -120,8 +120,6 @@ export const TrackingDashboard = () => {
             </div>
             <CustomerProfile />
           </header>
-          
-    {/* </SidebarProvider> */}
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary mb-4">Track Your Applications</h2>
@@ -265,7 +263,7 @@ export const TrackingDashboard = () => {
         </div>
       </div>
       </div>
-          </div>
+      </div>
        </SidebarProvider>
     </section>
   );
