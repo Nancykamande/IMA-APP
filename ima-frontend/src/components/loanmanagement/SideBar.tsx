@@ -23,6 +23,7 @@ import {
 
 const navigationItems = [
   { title: "Dashboard", url: "/user-dashboard", icon: Home },
+  { title: "Customer Details", url: "/customer-info", icon: FileText },
   { title: "Applications", url: "/user-applications", icon: FileText },
   { title: "Calculator", url: "/loan-calculator", icon: Calculator },
   { title: "Payments", url: "/dash-statistic", icon: DollarSign },

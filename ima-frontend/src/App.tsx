@@ -17,6 +17,8 @@ import DashbaordStatis from "./components/loanmanagement/DashbaordStatis";
 import LoanCalculator from "./components/LoanCalculator";
 import { UserApplications } from "./components/loanmanagement/UserApplications";
 import SideBarLayout from '@/components/SideBarLayout';
+import CustomerInfoPage from "./components/admin/CustomerInfoPage";
+import CustomerDetailsPage from "./components/admin/CustomerDetailsPage";
 
 
 
@@ -44,6 +46,10 @@ const App = () => (
       <Route path="/sign-up" element={<Layout><SignUpForm /></Layout>} />
       <Route path="/sign-in" element={<Layout><SignInForm /></Layout>} />
       <Route path="/application-form" element={<Layout><ApplicationForm /></Layout>} />
+      {/* <Route path="/customer-info" element={<Layout><CustomerInfoGrid /></Layout>} /> */}
+    
+
+    
       
        
     </Route>
@@ -54,6 +60,8 @@ const App = () => (
     <Route path="/user-applications" element={<UserApplications />} />
     <Route path="/loan-calculator" element={<LoanCalculator />} />
     <Route path="/dash-statistic" element={<DashbaordStatis />} />
+    {/* <Route path="/customer-info" element={<CustomerInfoPage />} /> */}
+    <Route path="/customer-info" element={<CustomerDetailsPage />} />
     </Route>
 
     <Route path="*" element={<NotFound />} />
