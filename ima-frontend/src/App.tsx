@@ -16,6 +16,7 @@ import {Header} from '@/components/Header';
 import DashbaordStatis from "./components/loanmanagement/DashbaordStatis";
 import LoanCalculator from "./components/LoanCalculator";
 import { UserApplications } from "./components/loanmanagement/UserApplications";
+import SideBarLayout from '@/components/SideBarLayout';
 
 
 
@@ -48,10 +49,12 @@ const App = () => (
     </Route>
 
     {/* Route without Header */}
+    <Route element={<SideBarLayout />}>
     <Route path="/user-dashboard" element={<UserDashboard />} />
     <Route path="/user-applications" element={<UserApplications />} />
     <Route path="/loan-calculator" element={<LoanCalculator />} />
-     <Route path="/dash-statistic" element={<DashbaordStatis />} />
+    <Route path="/dash-statistic" element={<DashbaordStatis />} />
+    </Route>
 
     <Route path="*" element={<NotFound />} />
 

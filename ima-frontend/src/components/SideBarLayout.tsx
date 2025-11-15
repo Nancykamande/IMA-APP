@@ -1,44 +1,17 @@
-import { Outlet } from "react-router-dom";
-import { MortgageSidebar } from "./loanmanagement/SideBar";
-import { SidebarProvider, SidebarTrigger } from "./ui/sidebar";
-import { CustomerProfile } from "./loanmanagement/CustomerProfile";
+// import { Outlet } from "react-router-dom";
+// import { MortgageSidebar } from "./loanmanagement/SideBar";
+// import { SidebarProvider, SidebarTrigger } from "./ui/sidebar";
+// import { CustomerProfile } from "./loanmanagement/CustomerProfile";
 
-// SidebarLayout.tsx
-interface LayoutProps {
-  children: React.ReactNode;
-}
-const SideBarLayout: React.FC<LayoutProps> = ({ children }) => {
-  return (
-    <div className="flex flex-col min-h-screen">
-    
-      <SidebarProvider>
-           <div className="min-h-screen flex w-full bg-background">
-            <MortgageSidebar />
-            
-            <div className="flex-1 flex flex-col">
-             <header className="flex items-center justify-between bg-card border-b shadow-header">
-                <div className="flex items-center gap-4 p-4">
-                  <SidebarTrigger />
-                  <div>
-                    <h1 className="text-2xl font-bold text-foreground">Dashboard</h1>
-                    <p className="text-sm text-muted-foreground">Welcome back, Customer</p>
-                  </div>
-                </div>
-                <CustomerProfile />
-              </header>
-               <Outlet />
-              </div>
-            </div>
-            </SidebarProvider>
-   
-    </div>
-  );
-};
-
-export default SideBarLayout;
-// export default function SideBarLayout() {
+// // SidebarLayout.tsx
+// interface LayoutProps {
+//   children: React.ReactNode;
+// }
+// const SideBarLayout: React.FC<LayoutProps> = ({ children }) => {
 //   return (
-//      <SidebarProvider>
+//     <div className="flex flex-col min-h-screen">
+    
+//       <SidebarProvider>
 //            <div className="min-h-screen flex w-full bg-background">
 //             <MortgageSidebar />
             
@@ -53,8 +26,68 @@ export default SideBarLayout;
 //                 </div>
 //                 <CustomerProfile />
 //               </header>
+//                <Outlet />
 //               </div>
 //             </div>
 //             </SidebarProvider>
+   
+//     </div>
 //   );
-// }
+// };
+
+// export default SideBarLayout;
+// // export default function SideBarLayout() {
+// //   return (
+// //      <SidebarProvider>
+// //            <div className="min-h-screen flex w-full bg-background">
+// //             <MortgageSidebar />
+            
+// //             <div className="flex-1 flex flex-col">
+// //              <header className="flex items-center justify-between bg-card border-b shadow-header">
+// //                 <div className="flex items-center gap-4 p-4">
+// //                   <SidebarTrigger />
+// //                   <div>
+// //                     <h1 className="text-2xl font-bold text-foreground">Dashboard</h1>
+// //                     <p className="text-sm text-muted-foreground">Welcome back, Customer</p>
+// //                   </div>
+// //                 </div>
+// //                 <CustomerProfile />
+// //               </header>
+// //               </div>
+// //             </div>
+// //             </SidebarProvider>
+// //   );
+// // }
+
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { MortgageSidebar } from "@/components/loanmanagement/SideBar";
+import { CustomerProfile } from "@/components/loanmanagement/CustomerProfile";
+import { Outlet } from "react-router-dom";
+
+export default function SideBarLayout() {
+  return (
+    <SidebarProvider>
+      <div className="min-h-screen flex w-full bg-background">
+        
+        {/* LEFT SIDEBAR */}
+        <MortgageSidebar />
+        
+        {/* RIGHT CONTENT */}
+        <div className="flex-1 flex flex-col">
+          <header className="flex items-center justify-between bg-card border-b shadow-header">
+            <div className="flex items-center gap-4 p-4">
+              <h1 className="text-2xl font-bold">Dashboard</h1>
+            </div>
+            <CustomerProfile />
+          </header>
+
+          <main className="p-6">
+           
+               <Outlet />
+          </main>
+        </div>
+      </div>
+    </SidebarProvider>
+  );
+}
+

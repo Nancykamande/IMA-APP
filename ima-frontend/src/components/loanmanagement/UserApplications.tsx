@@ -7,7 +7,7 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { MortgageSidebar } from "@/components/loanmanagement/SideBar";
 import { CustomerProfile } from "@/components/loanmanagement/CustomerProfile";
 import  { DashbaordStatis } from "@/components/loanmanagement/DashbaordStatis";
-
+import { useLocation } from "react-router-dom";
 import { 
   CheckCircle, 
   Clock, 
@@ -16,6 +16,8 @@ import {
   Download,
   Eye
 } from "lucide-react";
+
+
 
 // Mock data for demonstration
 const mockApplications = [
@@ -70,6 +72,9 @@ const mockApplications = [
 ];
 
 export const UserApplications = () => {
+  const location = useLocation();
+const hideSidebar = location.pathname === "/";
+{!hideSidebar && <MortgageSidebar />}
   const getStatusIcon = (status: string) => {
     switch (status) {
       case "Approved":
@@ -105,7 +110,7 @@ export const UserApplications = () => {
   return (
     
     <section id="tracking" className="py-section bg-muted/20">
-       <SidebarProvider>
+       {/* <SidebarProvider>
        <div className="min-h-screen flex w-full bg-background">
         <MortgageSidebar />
         
@@ -119,7 +124,7 @@ export const UserApplications = () => {
               </div>
             </div>
             <CustomerProfile />
-          </header>
+          </header> */}
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary mb-4">Track Your Applications</h2>
@@ -262,9 +267,9 @@ export const UserApplications = () => {
         
         </div>
       </div>
+      {/* </div>
       </div>
-      </div>
-       </SidebarProvider>
+       </SidebarProvider> */}
     </section>
   );
 };

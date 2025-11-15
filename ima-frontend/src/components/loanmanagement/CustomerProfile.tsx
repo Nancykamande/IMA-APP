@@ -21,10 +21,10 @@ export function CustomerProfile() {
     navigator('/');
 
    }
-   const location = useLocation();
-const hideSidebar = location.pathname === "/";
+//    const location = useLocation();
+// const hideSidebar = location.pathname === "/";
 
-{!hideSidebar && <MortgageSidebar />}
+// {!hideSidebar && <MortgageSidebar />}
 
 
   function loadUserProfile(){
