@@ -9,6 +9,10 @@ import {
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
 import { MoreHorizontal, ChevronDown, RefreshCcw, Search } from "lucide-react";
+import React, {useEffect, useState} from 'react'
+import { listAllCustomers } from '../services/CustomerService'
+import {useNavigate} from 'react-router-dom'
+
 
 interface CustomerItem {
   id: number;
@@ -24,10 +28,16 @@ interface CustomerItem {
 }
 
 interface Props {
-  customers: CustomerItem[];
+ // customers: CustomerItem[];
 }
 
+const [customers, setCustomers] = useState([])
+
 export default function CustomerDetailsGrid({ customers }: Props) {
+
+
+    
+
   return (
     <div className="p-4 w-full">
 

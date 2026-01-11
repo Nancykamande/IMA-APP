@@ -1,6 +1,8 @@
 // src/pages/CustomerInfoPage.tsx
 
-import CustomerDetailsGrid from "./customerdetailsGrid";
+import CustomerDetailsGrid from "./CustomerDetailsGrid";
+
+// import CustomerDetailsGrid from "./customerdetailsGrid";
 
 
 export default function CustomerDetailsPage() {
